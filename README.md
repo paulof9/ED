@@ -1,11 +1,116 @@
 # Estrutura de dados 01
+ * tenho de ver lista ordenadas!
+
+## Tipos de Listas:
+### 1. Lista Estática (ou Vetor)
+
+É uma lista guardada em um array.
+A memória é fixa: você decide o tamanho antes e não muda depois.
+
+✔️ Vantagens
+
+* Acesso rápido por índice (O(1)).
+
+* Simples de usar.
+
+❌ Desvantagens
+
+* Tamanho fixo.
+
+* Inserir/remover no meio pode ser custoso, pois precisa deslocar elementos.
+
+### 2. Lista Ligada Simples (Singly Linked List)
+
+Aqui cada elemento é um nó que guarda:
+
+* um valor
+
+* um ponteiro para o próximo nó
+
+* É como uma corrente apontando para frente.
+
+✔️ Vantagens
+
+* Cresce dinamicamente.
+
+* Inserção e remoção simples na cabeça da lista.
+
+❌ Desvantagens
+
+* Acesso lento: precisa percorrer um a um.
+
+* Não dá pra voltar ao nó anterior.
+
+🌱 Exemplo em C
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct No {
+    int valor;
+    struct No *prox;
+} No;
+
+int main() {
+    No *n1 = malloc(sizeof(No));
+    No *n2 = malloc(sizeof(No));
+
+    n1->valor = 10;
+    n1->prox = n2;
+
+    n2->valor = 20;
+    n2->prox = NULL;
+
+    printf("%d -> %d\n", n1->valor, n2->valor);
+
+    free(n1);
+    free(n2);
+    return 0;
+}
+```
+### 3. Lista Duplamente Ligada (Doubly Linked List)
+
+Cada elemento guarda:
+
+- ponteiro para próximo
+
+- ponteiro para anterior
+
+É como um trilho onde você pode andar para frente e para trás.
+
+✔️ Vantagens
+
+* Inserção e remoção mais flexíveis.
+
+* Pode percorrer nos dois sentidos.
+
+❌ Desvantagens
+
+* Mais memória por nó.
+
+* Mais complexa de implementar.
+
+🌱 Exemplo em C
+
+```
+typedef struct No {
+    int valor;
+    struct No *prox;
+    struct No *ant;
+} No;
+```
 
 ## Lista de exercícios 01
 1. Considere a lista: [4, 8, 10, 12, 20] (tamanho atual = 5). Simule um passo a passo para:
 - (a) Inserir o elemento 15 na posição 2
+- - Aqui devemos criar uma função que pegue a posição 2 com um for e a partir dessa posição adicione o elemento 15, então empurre os demais para n+1 posições e por fim adicione no tamanho da lista +1;
 - (b) Remover o elemento da posição 4
+- - A mesma ideia de inserir, porém empurra do ultimo para o primeiro os elementos de diminui a lista em -1;
 - (c) Inserir 3 no início da lista
+- - Com a mesma função de adicionar, insere, puxa pra frente e aumenta a lista;
 - (d) Mostrar a lista após cada operação
+- - For percorrendo a lista com printf;@
 
 2. Dada uma lista estática já ordenada: [2, 5, 7, 11, 13], explique:
 - (a) Por que não é possível inserir um elemento no meio sem deslocar os outros?
