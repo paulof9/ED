@@ -2,7 +2,10 @@
  * tenho de ver lista ordenadas!
 
 ## Tipos de Listas:
-### 1. Lista Estática (ou Vetor)
+### 1. Lista Estática ./sequencia-estatica
+* Sobre Lista ordenada: os elementos são mantidos em uma ordem específica, geralmente baseada em algum critério, como valor ou chave. Ex.: Inserção no meio de forma ORDENADA *** ./ordenada.c ***
+* Percorrer até achar o primeiro elemento maior que o valor a inserir. (Inserir no meio não é uma lista ordenada pq não tem critério.)
+
 
 É uma lista guardada em um array.
 A memória é fixa: você decide o tamanho antes e não muda depois.
@@ -19,7 +22,7 @@ A memória é fixa: você decide o tamanho antes e não muda depois.
 
 * Inserir/remover no meio pode ser custoso, pois precisa deslocar elementos.
 
-### 2. Lista Ligada Simples (Singly Linked List)
+### 2. Lista Simplesmente Encadeada ./simplesmente-encadeada.c
 
 Aqui cada elemento é um nó que guarda:
 

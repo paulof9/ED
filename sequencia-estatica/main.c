@@ -1,3 +1,4 @@
+// Vetor com operações de lista.
 #include <stdio.h>
 #include <string.h>
 #include "Lista.h"
